@@ -1,0 +1,43 @@
+snippet hu-cl
+<script>
+  console.log()
+</script>
+endsnippet
+
+snippet hu-pre
+<pre class="chroma">
+{{ $1 }}
+</pre>
+endsnippet
+
+snippet hu-end
+{{end}}
+endsnippet
+
+snippet hu-print
+ <h2 class="text-2xl font-bold text-orange-500 m-4">the . in the current scope is:</h2>
+      <pre class="chroma">
+     {{ println . }}
+      </pre>
+endsnippet
+
+
+snippet hu-long-debug
+
+    <pre class="chroma">
+      <!--alt output: {{.AlternativeOutputFormats}}-->
+      description: {{.Description }}
+      draft: {{ .Draft }}
+      file: {{ .File }}
+      kind: {{.Kind }}
+      perma: {{.Permalink }}
+      relperma: {{.RelPermalink }}
+      section: {{.CurrentSection }}
+      summary: {{.Summary }}
+      title: {{.Title }}
+      scratch: {{.Scratch}}
+
+site draft?: {{.Site.BaseURL}}
+
+      </pre>
+endsnippet
