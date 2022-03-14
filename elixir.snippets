@@ -1,3 +1,68 @@
 snippet io
 |> IO.inspect(label: "$1")
 endsnippet
+
+# https://github.com/srydell/dotfiles/blob/78d982825cf206fb7d63537d6c76c9daf59d948e/vim/.vim/snips/elixir.snippets
+# https://github.com/lstor/dotfiles/blob/d8790db619a22f5604b58274701373e7185fc7ce/.vim/UltiSnips/elixir.snippets
+
+snippet def "A function definition" b
+def ${1:f}($2) do
+  ${0:${VISUAL:}}
+end
+endsnippet
+
+snippet defm "A module definition" b
+defmodule ${1:Module} do
+  ${0:${VISUAL:}}
+end
+endsnippet
+
+snippet defp "A private function definition" b
+defp ${1:f}($2) do
+  ${0:${VISUAL:}}
+end
+endsnippet
+
+snippet defs "A struct" b
+defstruct [${1::id, :name, :username}]$0
+endsnippet
+
+snippet mdoc "Module documentation" b
+@moduledoc """
+${1:${VISUAL:Module docs}}
+"""$0
+endsnippet
+
+snippet if "Simple if statement" b
+if ${1:true} do
+  ${2:true}
+end
+endsnippet
+
+snippet ife "If else statement" b
+if ${1:true} do
+  ${2:true}
+else
+  ${3:false}
+end
+endsnippet
+
+snippet case "A case statement" b
+case ${1:IO.puts "Hello"} do
+  ${2:{:ok, ${3:"Hello"}}} ->
+    $4
+
+  ${5:_} ->
+    $6
+end$0
+endsnippet
+
+snippet cond "A cond statement" b
+cond do
+  ${1:"Hello" == "Hello"} ->
+    ${2:{:ok, true}}
+
+  ${3:true} ->
+    ${3:{:error, false}}
+end$0
+endsnippet
