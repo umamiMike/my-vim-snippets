@@ -24,8 +24,36 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet \`\`\` "Description" b
-```$1
-$2
-```
+snippet codeblock "Description"
+\`\`\`
+	$1
+\`\`\`
+endsnippet
+
+snippet md
+[]($1)
+endsnippet
+
+snippet mdb
+[${0:${VISUAL}}]($1)
+endsnippet
+
+snippet mdc
+[$1](${0:${VISUAL}})
+endsnippet
+
+snippet more "more tag for hugo blog"
+<!--more-->
+endsnippet
+snippet hugo-mermaid b
+{{< mermaid >}}
+flowchart TD
+
+system --> tmux --> vim
+system --> clipboard
+tmux --> window
+tmux --> pane
+vim --> buffer
+vim --> tab
+{{< /mermaid >}}
 endsnippet

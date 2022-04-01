@@ -187,3 +187,29 @@ endsnippet
 snippet useState "use state " b
 const [a, aHandler ] = useState(input)
 endsnippet
+
+
+snippet reduce "a reduce function " b 
+const theReducer = (state, action) => {
+  switch (action.type) {
+    case 'a':
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
+    default:
+      return state;
+  }
+};
+
+endsnippet
+
+
+snippet dispatch b
+  const someActionToDispatch = (todo) => {
+    dispatch({
+      type: 'a',
+      payload: payload,
+    });
+  };
+endsnippet
