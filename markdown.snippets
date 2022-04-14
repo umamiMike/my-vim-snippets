@@ -49,11 +49,28 @@ snippet hugo-mermaid b
 {{< mermaid >}}
 flowchart TD
 
-system --> tmux --> vim
-system --> clipboard
-tmux --> window
-tmux --> pane
-vim --> buffer
-vim --> tab
+a --> b --> c
+d --> | message | e
 {{< /mermaid >}}
+a[a box ]
+b{ diamond }
+c(rounded box)
+d([pillbox])
+e[(database)]
+f((circle))
+%% no arrow
+a --- b
+c-- text message ---d
+d --> | message with arrow | e
+%% dotted line
+e -.-> f
+f-. dotted with text .->g
+g ==> thick
+h == thick ==> g ==> chaining
+%% multiple connections
+i & j --> k & l
+endsnippet
+
+snippet log "log "
+is awesom
 endsnippet
