@@ -23,29 +23,13 @@
 #		endsnippet
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
-
-snippet codeblock "Description"
-\`\`\`
-	$1
-\`\`\`
-endsnippet
-
-snippet md
-[]($1)
-endsnippet
-
-snippet mdb
-[${0:${VISUAL}}]($1)
-endsnippet
-
-snippet mdc
-[$1](${0:${VISUAL}})
-endsnippet
-
+snippet youtube 
+{{< youtube $1 >}}
 snippet more "more tag for hugo blog"
 <!--more-->
 endsnippet
-snippet hugo-mermaid b
+
+snippet hugo-mermaid
 {{< mermaid >}}
 flowchart TD
 
@@ -69,8 +53,10 @@ g ==> thick
 h == thick ==> g ==> chaining
 %% multiple connections
 i & j --> k & l
+{{< /mermaid >}}
 endsnippet
+snippet hugo-collapse 
+{{< collapse summary="$1" openByDefault=false >}}
 
-snippet log "log "
-is awesom
+{{< /collapse >}}
 endsnippet
