@@ -1,0 +1,178 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+snippet youtube 
+{{< youtube $1 >}}
+endsnippet
+
+snippet more "more tag for hugo blog"
+<!--more-->
+endsnippet
+
+snippet hugo-mermaid
+{{< mermaid >}}
+flowchart TD
+
+a --> b --> c
+d --> | message | e
+{{< /mermaid >}}
+a[a box ]
+b{ diamond }
+c(rounded box)
+d([pillbox])
+e[(database)]
+f((circle))
+%% no arrow
+a --- b
+c-- text message ---d
+d --> | message with arrow | e
+%% dotted line
+e -.-> f
+f-. dotted with text .->g
+g ==> thick
+h == thick ==> g ==> chaining
+%% multiple connections
+i & j --> k & l
+{{< /mermaid >}}
+endsnippet
+
+snippet hugo-collapse 
+{{< collapse summary="$1" openByDefault=false >}}
+
+{{< /collapse >}}
+endsnippet
+
+
+snippet collapse-section 
+# A collapsible section with markdown
+<details>
+  <summary> $1 </summary>
+  
+</details>
+
+snippet youtube
+{{< youtube $1 >}}
+endsnippet
+
+snippet modal
+{{< modal >}}
+
+
+{{ /modal}}
+endsnippet
+
+snippet video "video html"
+<video controls width="720px">
+    <source src="$1" type="video/webm">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+endsnippet
+
+
+snippet flex-shortcode 
+{{< ltr >}}
+element
+
+element
+
+element
+{{< /ltr >}}
+endsnippet
+
+snippet article
+## Why will I do it?
+
+## What will I do?
+
+## How will I do it?
+
+V
+
+## summary
+
+## motivation
+
+# screenshots
+
+## alternatives
+
+pros and cons
+
+
+## steps
+
+1. write a draft
+2. get feedback
+3. post to staging site
+4. another round of feedback
+5. publish
+
+anything else
+endsnippet
+
+
+snippet hugo-ref 
+
+[$2]({{< ref "$1" >}})
+
+endsnippet
+
+snippet footnote
+
+This is a footnote yo[^$1]
+
+[^$1]: and this is the corrosponding footnote
+endsnippet
+
+snippet link
+[${0:${VISUAL}}](${1:`!v
+getreg("*")
+`})
+endsnippet
+
+snippet space
+&nbsp;
+endsnippet
+
+snippet cover-letter
+
+## Mike Wilding 
+
+{{< ltr style="c-05  " >}}
+### github.com/umamimike &nbsp;&nbsp;&nbsp; heymichaelwilding@gmail.com  &nbsp;&nbsp;&nbsp;   503-957-0099
+<br>
+{{< /ltr >}}
+
+## Company Name
+Address
+
+ <!-- 1. take keywords from job posting -->
+
+### Date
+
+### Here are some ways I meet the job requirements:
+
+endsnippet
+

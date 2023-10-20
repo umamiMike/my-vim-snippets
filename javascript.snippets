@@ -39,7 +39,12 @@ snippet fa "one line arrow function" i
 ($1) => $2
 endsnippet
 
-snippet cl "console.log(...)" i
+snippet cll "console.log(...)" A
+console.log($1)
+endsnippet
+
+
+snippet cons "console.log(...)" i
 console.log($1)
 endsnippet
 
@@ -178,3 +183,38 @@ snippet ed "export default"
 export default $1
 endsnippet
 
+snippet blc "block comment" A
+/*
+$1
+*/
+endsnippet
+
+snippet useState "use state " b
+const [a, aHandler ] = useState(input)
+endsnippet
+
+
+snippet reducefunction "a reduce function " b 
+const theReducer = (state, action) => {
+  switch (action.type) {
+    case 'a':
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
+    default:
+      return state;
+  }
+};
+
+endsnippet
+
+
+snippet dispatch b
+  const someActionToDispatch = (todo) => {
+    dispatch({
+      type: 'a',
+      payload: payload,
+    });
+  };
+endsnippet

@@ -2,9 +2,6 @@ snippet io
 |> IO.inspect(label: "$1")
 endsnippet
 
-# https://github.com/srydell/dotfiles/blob/78d982825cf206fb7d63537d6c76c9daf59d948e/vim/.vim/snips/elixir.snippets
-# https://github.com/lstor/dotfiles/blob/d8790db619a22f5604b58274701373e7185fc7ce/.vim/UltiSnips/elixir.snippets
-
 snippet def "A function definition" b
 def ${1:f}($2) do
   ${0:${VISUAL:}}
@@ -65,4 +62,10 @@ cond do
   ${3:true} ->
     ${3:{:error, false}}
 end$0
+endsnippet
+
+snippet do w
+do
+$1
+end
 endsnippet
